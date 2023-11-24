@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TheDigitalLibrary|Shahid Ullah</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      
+      body {
+        background-color: rgb(118, 200, 227);
+      }
+
+      .navbar {
+        padding: 80px 0;
+        font-size: large;
+      }
+
+      .navbar-brand .brand-text {
+        font-weight: bold;
+        font-size: x-large;
+        color: #ff0000;
+      }
+
+      .navbar-brand .library-text {
+        color: #ffffff;
+        font-weight: bold;
+        font-size: large;
+      }
+
+      
+      .container {
+        margin-top: 20px;
+      }
+
+      .table th,
+      .table td {
+        font-size: 1rem;
+      }
+
+      #totalPrice {
+        font-weight: bold;
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        color: #ffffff;
+        border: 2px solid #000000;
+        border-radius: 18px;
+      }
+
+      .btn-primary:hover {
+        background-color: rgba(0, 255, 0, 0.564);
+        color: #000000;
+        border: 2px solid #000000;
+      }
+
+      .btn-danger {
+        background-color: rgba(0, 255, 0, 0.564);
+        border: 2px solid #000000;
+        color: #000000;
+        border-radius: 18px;
+      }
+
+      .btn-danger:hover {
+        background-color: #ff0019;
+        border: 2px solid #000000;
+        border-radius: 18px;
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          padding: 20px;
+        }
+
+        .navbar-brand img {
+          width: 40px;
+        }
+
+        .navbar-brand .brand-text {
+          font-size: 1.5rem;
+        }
+
+        .navbar-collapse {
+          background-color: rgba(0, 0, 0, 0.9);
+          padding: 20px;
+        }
+
+        .navbar-nav .nav-item {
+          margin-bottom: 10px;
+        }
+
+        .container {
+          margin-top: 10px;
+        }
+
+        .col-md-6 h2 {
+          font-size: 1.2rem;
+        }
+
+        .list-group-item h3 {
+          font-size: 1rem;
+        }
+
+        .table th,
+        .table td {
+          font-size: 0.9rem;
+        }
+
+        #totalPrice {
+          font-weight: bold;
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark"
+      style="padding: 80px; font-size: large"
+    >
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center"
+      >
+        <div class="d-flex align-items-center">
+          <img
+            src="images/logo.jpg"
+            alt="logo-image"
+            width="50"
+            style="border: 1px; border-radius: 100%"
+          />
+          <a class="navbar-brand" href="#banner-images">
+            <span style="font-weight: bold; font-size: xx-large; color: #ff0000"
+              >TheDigital</span
+            >
+            <span style="color: #ffffff; font-weight: bold; font-size: xx-large"
+              >Library</span
+            >
+          </a>
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Book Categories
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="categories.html">See all</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Fiction</a></li>
+                <li><a class="dropdown-item" href="#">Distopian</a></li>
+                <li><a class="dropdown-item" href="#">Classic</a></li>
+                <li><a class="dropdown-item" href="#">Science Fiction</a></li>
+                <li><a class="dropdown-item" href="#">Fantasy</a></li>
+                <li><a class="dropdown-item" href="#">Mystery</a></li>
+                <li><a class="dropdown-item" href="#">Historic Fiction</a></li>
+                <li><a class="dropdown-item" href="#">Gothic</a></li>
+                <li><a class="dropdown-item" href="#">Horror</a></li>
+                <li><a class="dropdown-item" href="#">Philosophical</a></li>
+                <li><a class="dropdown-item" href="#">Contemporary</a></li>
+                <li><a class="dropdown-item" href="#">Autobiographical</a></li>
+                <li><a class="dropdown-item" href="#">Adventure</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cart.html">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <h1 style="text-align: center; margin-top: 10px">Your Cart</h1>
+      <p style="text-align: center; margin-bottom: 50px">
+        Select books from here by your choice and then proceed to payment!
+      </p>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Available Books</h2>
+          <p>
+            Dive into a world of captivating reads at our online library! From
+            timeless classics to thrilling mysteries and thought-provoking
+            dystopias, we've got books for every reader. Explore and discover
+            your next great read today!
+          </p>
+          <ul id="bookList" class="list-group">
+          
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h2>Selected Book Details</h2>
+          <p>
+            Embark on a literary journey with our meticulously selected
+            books!Dive into the details and curate your own reading list with
+            us. Explore the magic of storytelling with TheDigitalLibrary!
+          </p>
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="selectedBookDetails">
+            </tbody>
+          </table>
+          <div>
+            <strong>Total Price: $<span id="totalPrice">0.00</span></strong>
+          </div>
+          <button class="btn btn-primary mt-2" onclick="proceedToPayment()">
+            Proceed to Payment
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const books = [
+        {
+          id: 1,
+          title: "To Kill a Mockingbird",
+          author: "Harper Lee",
+          category: "Fiction",
+          price: 12.99,
+          description:
+            "Classic novel set in the American South during the 1930s.",
+          cover_image: "images/to_kill_a_mockingbird.jpg",
+        },
+        {
+          id: 2,
+          title: "1984",
+          author: "George Orwell",
+          category: "Dystopian",
+          price: 9.99,
+          description:
+            "Classic dystopian novel about totalitarianism and surveillance.",
+          cover_image: "images/1984.jpg",
+        },
+        {
+          id: 3,
+          title: "The Great Gatsby",
+          author: "F. Scott Fitzgerald",
+          category: "Classic",
+          price: 11.5,
+          description: "A story of the Jazz Age and the American Dream.",
+          cover_image: "images/great_gatsby.jpg",
+        },
+        {
+          id: 4,
+          title: "Moby-Dick",
+          author: "Herman Melville",
+          category: "Classic",
+          price: 13.25,
+          description: "Novel about the voyage of the whaling ship Pequod.",
+          cover_image: "images/moby_dick.jpg",
+        },
+        {
+          id: 5,
+          title: "Brave New World",
+          author: "Aldous Huxley",
+          category: "Science Fiction",
+          price: 10.75,
+          description: "A dystopian social science fiction novel.",
+          cover_image: "images/brave_new_world.jpg",
+        },
+        {
+          id: 6,
+          title: "Pride and Prejudice",
+          author: "Jane Austen",
+          category: "Classic",
+          price: 9.99,
+          description: "Classic romantic novel of manners.",
+          cover_image: "images/pride_and_prejudice.jpg",
+        },
+        {
+          id: 7,
+          title: "The Catcher in the Rye",
+          author: "J.D. Salinger",
+          category: "Fiction",
+          price: 8.5,
+          description:
+            "Novel known for its themes of teenage angst and alienation.",
+          cover_image: "images/catcher_in_the_rye.jpg",
+        },
+        {
+          id: 8,
+          title: "The Lord of the Rings",
+          author: "J.R.R. Tolkien",
+          category: "Fantasy",
+          price: 15.99,
+          description: "High-fantasy novel series.",
+          cover_image: "images/lord_of_the_rings.jpg",
+        },
+        {
+          id: 9,
+          title: "The Hobbit",
+          author: "J.R.R. Tolkien",
+          category: "Fantasy",
+          price: 11.75,
+          description: "Prequel to The Lord of the Rings.",
+          cover_image: "images/the_hobbit.jpg",
+        },
+        {
+          id: 10,
+          title: "The Da Vinci Code",
+          author: "Dan Brown",
+          category: "Mystery",
+          price: 14.25,
+          description: "Mystery thriller novel.",
+          cover_image: "images/da_vinci_code.jpg",
+        },
+        {
+          id: 11,
+          title: "The Alchemist",
+          author: "Paulo Coelho",
+          category: "Fiction",
+          price: 10.5,
+          description: "Philosophical novel.",
+          cover_image: "images/alchemist.jpg",
+        },
+        {
+          id: 12,
+          title: "A Tale of Two Cities",
+          author: "Charles Dickens",
+          category: "Classic",
+          price: 12.25,
+          description: "Historical novel set during the French Revolution.",
+          cover_image: "images/tale_of_two_cities.jpg",
+        },
+        {
+          id: 13,
+          title: "War and Peace",
+          author: "Leo Tolstoy",
+          category: "Historical Fiction",
+          price: 16.99,
+          description: "Epic novel set during the Napoleonic Wars.",
+          cover_image: "images/war_and_peace.jpg",
+        },
+        {
+          id: 14,
+          title: "The Picture of Dorian Gray",
+          author: "Oscar Wilde",
+          category: "Classic",
+          price: 11.99,
+          description: "Gothic and philosophical novel.",
+          cover_image: "images/dorian_gray.jpg",
+        },
+        {
+          id: 15,
+          title: "The Adventures of Huckleberry Finn",
+          author: "Mark Twain",
+          category: "Classic",
+          price: 10.99,
+          description: "Novel known for its social commentary.",
+          cover_image: "images/huckleberry_finn.jpg",
+        },
+        {
+          id: 16,
+          title: "Jane Eyre",
+          author: "Charlotte Bronte",
+          category: "Classic",
+          price: 9.5,
+          description: "Autobiographical novel.",
+          cover_image: "images/jane_eyre.jpg",
+        },
+        {
+          id: 17,
+          title: "The Road",
+          author: "Cormac McCarthy",
+          category: "Dystopian",
+          price: 13.75,
+          description: "Post-apocalyptic novel.",
+          cover_image: "images/the_road.jpg",
+        },
+        {
+          id: 18,
+          title: "Frankenstein",
+          author: "Mary Shelley",
+          category: "Gothic",
+          price: 11.25,
+          description: "Gothic novel about science and creation.",
+          cover_image: "images/frankenstein.jpg",
+        },
+        {
+          id: 19,
+          title: "The Stand",
+          author: "Stephen King",
+          category: "Horror",
+          price: 14.5,
+          description: "Post-apocalyptic horror/fantasy novel.",
+          cover_image: "images/the_stand.jpg",
+        },
+        {
+          id: 20,
+          title: "Crime and Punishment",
+          author: "Fyodor Dostoevsky",
+          category: "Classic",
+          price: 12.5,
+          description: "Psychological novel.",
+          cover_image: "images/crime_and_punishment.jpg",
+        },
+        {
+          id: 21,
+          title: "Les Miserables",
+          author: "Victor Hugo",
+          category: "Classic",
+          price: 13.99,
+          description: "Historical novel set in France.",
+          cover_image: "images/les_miserables.jpg",
+        },
+        {
+          id: 22,
+          title: "The Shining",
+          author: "Stephen King",
+          category: "Horror",
+          price: 11.75,
+          description: "Horror novel.",
+          cover_image: "images/the_shining.jpg",
+        },
+        {
+          id: 23,
+          title: "The Odyssey",
+          author: "Homer",
+          category: "Classic",
+          price: 10.25,
+          description: "Ancient Greek epic poem.",
+          cover_image: "images/the_odyssey.jpg",
+        },
+        {
+          id: 24,
+          title: "The Stranger",
+          author: "Albert Camus",
+          category: "Philosophical",
+          price: 12.25,
+          description: "Existential novel.",
+          cover_image: "images/the_stranger.jpg",
+        },
+        {
+          id: 25,
+          title: "Gone with the Wind",
+          author: "Margaret Mitchell",
+          category: "Historical Fiction",
+          price: 13.5,
+          description:
+            "Historical novel set in the American South during the Civil War.",
+          cover_image: "images/gone_with_the_wind.jpg",
+        },
+        {
+          id: 26,
+          title: "The Kite Runner",
+          author: "Khaled Hosseini",
+          category: "Contemporary",
+          price: 10.99,
+          description: "Contemporary novel set in Afghanistan.",
+          cover_image: "images/kite_runner.jpg",
+        },
+        {
+          id: 27,
+          title: "The Bell Jar",
+          author: "Sylvia Plath",
+          category: "Autobiographical",
+          price: 11.5,
+          description: "Autobiographical novel.",
+          cover_image: "images/bell_jar.jpg",
+        },
+        {
+          id: 28,
+          title: "The Count of Monte Cristo",
+          author: "Alexandre Dumas",
+          category: "Adventure",
+          price: 12.99,
+          description: "Adventure novel.",
+          cover_image: "images/count_of_monte_cristo.jpg",
+        },
+        {
+          id: 29,
+          title: "Anna Karenina",
+          author: "Leo Tolstoy",
+          category: "Classic",
+          price: 12.75,
+          description: "Tragic novel.",
+          cover_image: "images/anna_karenina.jpg",
+        },
+        {
+          id: 30,
+          title: "The Grapes of Wrath",
+          author: "John Steinbeck",
+          category: "Classic",
+          price: 11.99,
+          description: "Novel set during the Great Depression.",
+          cover_image: "images/grapes_of_wrath.jpg",
+        },
+      ];
+      const cart = [];
+      let totalSelectedPrice = 0;
+
+      function displayBooks() {
+        const bookList = document.getElementById("bookList");
+        bookList.innerHTML = "";
+
+        books.forEach((book) => {
+          const listItem = document.createElement("li");
+          listItem.classList.add("list-group-item");
+          listItem.innerHTML = `
+                    <h3>${book.title}</h3>
+                    <p>Author: ${book.author}</p>
+                    <p>Category: ${book.category}</p>
+                    <p>Price: $${book.price.toFixed(2)}</p>
+                    <button class="btn btn-primary" onclick="showBookDetails(${
+                      book.id
+                    })">Select</button>
+                `;
+
+          bookList.appendChild(listItem);
+        });
+      }
+
+      function showBookDetails(bookId) {
+        const selectedBook = books.find((book) => book.id === bookId);
+
+        const detailsElement = document.getElementById("selectedBookDetails");
+
+        const detailsRow = document.createElement("tr");
+        detailsRow.id = `bookRow_${selectedBook.id}`;
+        detailsRow.innerHTML = `
+                <td>${selectedBook.title}</td>
+                <td>${selectedBook.author}</td>
+                <td>${selectedBook.category}</td>
+                <td>$${selectedBook.price.toFixed(2)}</td>
+                <td><input type="number" id="quantity_${
+                  selectedBook.id
+                }" value="1" min="1" onchange="updateQuantity(${
+          selectedBook.id
+        }, this.value)"></td>
+                <td>
+                    <button class="btn btn-danger" onclick="removeFromCart(${
+                      selectedBook.id
+                    })">Delete</button>
+                </td>
+            `;
+
+        detailsElement.appendChild(detailsRow);
+
+        addToCart(selectedBook.id);
+      }
+
+      function updateQuantity(bookId, quantity) {
+        const cartItem = cart.find((item) => item.id === bookId);
+
+        if (cartItem) {
+          cartItem.quantity = parseInt(quantity, 10);
+          updateSelectedBooks();
+        }
+      }
+
+      function addToCart(bookId) {
+        const quantityInput = document.getElementById(`quantity_${bookId}`);
+        const quantity = parseInt(quantityInput.value);
+        const selectedBook = books.find((book) => book.id === bookId);
+
+        const existingCartItem = cart.find((item) => item.id === bookId);
+
+        if (existingCartItem) {
+          existingCartItem.quantity += quantity;
+        } else {
+          cart.push({
+            ...selectedBook,
+            quantity,
+          });
+        }
+
+        updateSelectedBooks();
+      }
+
+      function removeFromCart(bookId) {
+        const index = cart.findIndex((item) => item.id === bookId);
+
+        if (index !== -1) {
+          cart.splice(index, 1);
+          updateSelectedBooks();
+        }
+      }
+
+      function updateSelectedBooks() {
+        const detailsElement = document.getElementById("selectedBookDetails");
+        detailsElement.innerHTML = "";
+        totalSelectedPrice = 0;
+
+        cart.forEach((item) => {
+          const detailsRow = document.createElement("tr");
+          detailsRow.id = `bookRow_${item.id}`;
+          detailsRow.innerHTML = `
+                    <td>${item.title}</td>
+                    <td>${item.author}</td>
+                    <td>${item.category}</td>
+                    <td>$${item.price.toFixed(2)}</td>
+                    <td><input type="number" id="quantity_${item.id}" value="${
+            item.quantity
+          }" min="1" onchange="updateQuantity(${item.id}, this.value)"></td>
+                    <td>
+                        <button class="btn btn-danger" onclick="removeFromCart(${
+                          item.id
+                        })">Delete</button>
+                    </td>
+                `;
+          detailsElement.appendChild(detailsRow);
+
+          totalSelectedPrice += item.price * item.quantity;
+        });
+
+        const totalPriceElement = document.getElementById("totalPrice");
+        totalPriceElement.textContent = totalSelectedPrice.toFixed(2);
+      }
+
+      function proceedToPayment() {
+        localStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem("totalPrice", totalSelectedPrice.toFixed(2));
+
+        window.location.href = "payment.html";
+      }
+
+      displayBooks();
+    </script>
+
+     <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <footer
+      class="footer"
+      style="background-color: rgba(0, 0, 0); padding: 20px; color: aliceblue"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Contact Information</h3>
+            <p>
+              TheDigitalLibrary<br />
+              Peshawar, KPK<br />
+              Phone: 000-1234-56789<br />
+              Email: thedigitallibrary@peshawar.com
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h3>Connect with Us</h3>
+            <ul class="list-unstyled">
+              <a href="https://www.facebook.com" style="text-decoration: none"
+                >Facebook</a
+              >
+              <br />
+              <a href="https://www.twitter.com" style="text-decoration: none"
+                >Twitter</a
+              >
+              <br />
+              <a href="https://www.instagram.com" style="text-decoration: none"
+                >Instagram</a
+              >
+              <br />
+              <a href="https://www.linkdin.com" style="text-decoration: none"
+                >LinkdIn</a
+              >
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

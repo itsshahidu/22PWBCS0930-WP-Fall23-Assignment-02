@@ -1,0 +1,199 @@
+
+$primary-bg-color: rgb(118, 200, 227);
+$primary-text-color: #ff0000;
+$secondary-text-color: #ffffff;
+$link-color: #007bff;
+$hover-link-color: #ffffff;
+$hover-link-bg-color: rgb(255, 255, 255);
+$button-bg-color: #007bff;
+$button-text-color: #fff;
+$button-border-color: #000000;
+$button-border-radius: 20px;
+$button-hover-bg-color: #218838;
+$footer-bg-color: rgba(0, 0, 0, 0.8);
+$footer-text-color: aliceblue;
+$table-bg-color: #f2f2f2;
+$clear-button-margin: 10px;
+
+body {
+  background-color: $primary-bg-color;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: x-large;
+  color: $primary-text-color;
+}
+
+// Home Page Styles
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+.card-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  width: 18rem;
+  margin: 10px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+}
+
+.card-body {
+  text-align: center;
+}
+
+// Footer Styles
+.footer {
+  background-color: $footer-bg-color;
+  color: $footer-text-color;
+}
+
+.footer h3 {
+  margin-top: 0;
+}
+
+.list-unstyled {
+  text-align: center;
+}
+
+.list-unstyled a.btn {
+  margin: 5px;
+}
+
+// Categories Page Styles
+.category-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.category-item {
+  cursor: pointer;
+  padding: 10px;
+  background-color: $link-color;
+  color: $secondary-text-color;
+  border-radius: $button-border-radius;
+  font-size: 1rem;
+  margin: 5px;
+  border: 2px solid $button-border-color;
+}
+
+.category-item:hover {
+  background-color: $hover-link-bg-color;
+  color: $hover-link-color;
+  font-weight: bold;
+}
+
+// Cart Page Styles
+#clearButton {
+  cursor: pointer;
+  padding: 10px;
+  background-color: $button-bg-color;
+  color: $button-text-color;
+  border-radius: $button-border-radius;
+  margin-left: $clear-button-margin;
+}
+
+#clearButton:hover {
+  background-color: $hover-link-bg-color;
+  border: 3px solid $button-border-color;
+  border-radius: $button-border-radius;
+  color: $hover-link-color;
+}
+
+#searchInput {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  border: 2px solid $button-border-color;
+}
+
+// Contact Page Styles
+.container.mt-5 {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  border-radius: 5px;
+}
+
+.btn-success {
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgb(0, 0, 255);
+  color: $button-text-color;
+  border: 2px solid $button-border-color;
+  border-radius: $button-border-radius;
+}
+
+.btn-success:hover {
+  background-color: $hover-link-bg-color;
+  border: 3px solid $button-border-color;
+  border-radius: $button-border-radius;
+  color: $hover-link-color;
+}
+
+// Payment Page Styles
+.table {
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.table th {
+  background-color: $table-bg-color;
+}
+
+tfoot td {
+  text-align: right;
+}
+
+#total-amount {
+  font-weight: bold;
+  color: #333;
+}
+
+.btn-dark {
+  background-color: $link-color;
+  color: $secondary-text-color;
+  border: 2px solid $button-border-color;
+  border-radius: $button-border-radius;
+  transition: background-color 0.2s;
+}
+
+.btn-dark:hover {
+  background-color: $hover-link-bg-color;
+  border: 3px solid $button-border-color;
+  color: $hover-link-color;
+}

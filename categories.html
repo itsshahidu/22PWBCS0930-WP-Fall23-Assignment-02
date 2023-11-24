@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheDigitalLibrary|Shahid Ullah</title>
+
+
+    <link rel="stylesheet" href="styles.css">
+    
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+<style>
+    
+
+    body {
+      background-color: rgb(118, 200, 227);
+    }
+    
+    .navbar {
+      padding: 0;
+    }
+    
+    .navbar-brand {
+      font-weight: bold;
+      font-size: x-large;
+      color: #ff0000;
+    }
+    
+    main {
+      padding: 20px;
+    }
+    
+   
+    .search-input {
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    
+
+    .book-list {
+        margin-top: 40px;
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    
+    .book-item {
+      width: 300px;
+      border: 1px solid #000000;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      text-align: center;
+    }
+    
+    .book-item img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    
+    
+    .category-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .category-item {
+      cursor: pointer;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 20px;
+      font-size: 1rem;
+      margin: 5px;
+      border: 2px solid #000000;
+    }
+
+    .category-item:hover{
+        background-color: rgb(255, 255, 255);
+        color: #000000;
+        font-weight: bolder;
+    }
+    
+  
+    #clearButton {
+      cursor: pointer;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 20px;
+      margin-left: 10px;
+    }
+
+    #clearButton:hover{
+        background-color: rgb(255, 255, 255);
+        color: #000000;
+        font-weight: bolder;
+    }
+    
+    #searchInput {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      width: 100%;
+      border: 2px solid rgb(0, 0, 0);
+    }
+    
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 20px;
+      }
+    
+      .navbar-brand {
+        font-size: 1.5rem;
+      }
+    
+      .carousel-caption {
+        font-size: 1rem;
+      }
+    
+      .card {
+        width: 100%;
+        margin: 10px 0;
+      }
+    
+      .book-item {
+        width: 100%;
+      }
+    }
+</style>  
+</head>
+
+
+<body> 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 80px; font-size: large;">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            <img
+              src="images/logo.jpg"
+              alt="logo-image"
+              width="50"
+              style="border: 1px; border-radius: 100%"
+            />
+            <a class="navbar-brand" href="#banner-images">
+              <span style="font-weight: bold; font-size: xx-large; color: #ff0000">TheDigital</span>
+              <span style="color: #ffffff; font-weight: bold; font-size: xx-large;">Library</span>
+            </a>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Book Categories
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="categories.html">See all</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#">Fiction</a></li>
+                  <li><a class="dropdown-item" href="#">Distopian</a></li>
+                  <li><a class="dropdown-item" href="#">Classic</a></li>
+                  <li><a class="dropdown-item" href="#">Science Fiction</a></li>
+                  <li><a class="dropdown-item" href="#">Fantasy</a></li>
+                  <li><a class="dropdown-item" href="#">Mystery</a></li>
+                  <li><a class="dropdown-item" href="#">Historic Fiction</a></li>
+                  <li><a class="dropdown-item" href="#">Gothic</a></li>
+                  <li><a class="dropdown-item" href="#">Horror</a></li>
+                  <li><a class="dropdown-item" href="#">Philosophical</a></li>
+                  <li><a class="dropdown-item" href="#">Contemporary</a></li>
+                  <li><a class="dropdown-item" href="#">Autobiographical</a></li>
+                  <li><a class="dropdown-item" href="#">Adventure</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="cart.html">Cart</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+
+
+
+
+
+ <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <main>
+        <section id="categories">
+            <h2 style="text-align: center; padding-top: 15px; padding-bottom: 10px;">Books Categories</h2>
+            <ul class="category-list" id="categoryList">
+                <!-- Categories add here dynamically -->
+            </ul>
+        </section>
+
+        <section id="books">
+            <h2 style="text-align: center; padding-top: 10px; padding-bottom: 10px;">Search Books here</h2>
+            <input type="text" class="search-input" id="searchInput" placeholder="Search for book here">
+            <button id="clearButton">Reset All</button>
+            <ul class="book-list" id="bookList">
+                <!-- Books adds here dynamically  -->
+            </ul>
+            
+        </section>
+    </main>
+
+    <!-- Adding Bootstrap JS and Popper.js scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      let booksData = [];
+
+        displayBooks(booksData);
+
+
+
+
+function filterBooksByCategory(category) {
+    const filteredBooks = booksData.filter(book => book.category.toLowerCase() === category.toLowerCase());
+    displayBooks(filteredBooks);
+}
+
+
+function clearFilter() {
+    displayBooks(booksData);
+}
+
+
+function populateCategoryList() {
+    const categories = [...new Set(booksData.map(book => book.category))];
+
+    const categoryList = document.getElementById('categoryList');
+    categories.forEach(category => {
+        const li = document.createElement('li');
+        li.classList.add('category-item');
+        li.textContent = category;
+        li.addEventListener('click', () => filterBooksByCategory(category));
+        categoryList.appendChild(li);
+    });
+}
+
+
+function fetchDataAndPopulateCategories() {
+    fetch('books.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok.');
+            }
+            return response.json();
+        })
+        .then(books => {
+            booksData = books; 
+            populateCategoryList();
+            displayBooks(booksData); 
+        })
+        .catch(error => {
+            console.error('Error fetching or parsing data:', error);
+         
+        });
+}
+
+
+document.addEventListener('DOMContentLoaded', fetchDataAndPopulateCategories);
+
+document.getElementById('clearButton').addEventListener('click', clearFilter);
+
+function searchBooks() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const filteredBooks = booksData.filter(book =>
+        book.title.toLowerCase().includes(searchInput) ||
+        book.author.toLowerCase().includes(searchInput) ||
+        book.category.toLowerCase().includes(searchInput)
+    );
+    displayBooks(filteredBooks);
+}
+
+
+function displayBooks(books) {
+    const bookList = document.getElementById('bookList');
+    bookList.innerHTML = ''; 
+
+    books.forEach(book => {
+        const li = document.createElement('li');
+        li.classList.add('book-item');
+        li.innerHTML = `
+            <img src="${book.cover_image}" alt="${book.title}" style="max-width: 100%;">
+            <h3>${book.title}</h3>
+            <p>${book.author}</p>
+            <p>${book.price.toFixed(2)} USD</p>
+            <p>${book.description}</p>
+        `;
+        bookList.appendChild(li);
+    });
+}
+
+
+function fetchDataAndDisplayBooks() {
+    fetch('books.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok.');
+            }
+            return response.json();
+        })
+        .then(books => {
+            
+            booksData = books; 
+            displayBooks(books);
+        })
+        .catch(error => {
+            console.error('Error fetching or parsing data:', error);
+           
+        });
+}
+
+
+document.addEventListener('DOMContentLoaded', fetchDataAndDisplayBooks);
+
+document.getElementById('searchInput').addEventListener('input', searchBooks);
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer" style="background-color: rgba(0, 0, 0); padding: 20px; color: aliceblue;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Contact Information</h3>
+                <p>
+                    TheDigitalLibrary<br>
+                    Peshawar, KPK<br>
+                    Phone: 000-1234-56789<br>
+                    Email: thedigitallibrary@peshawar.com
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h3>Connect with Us</h3>
+                <ul class="list-unstyled">
+                    <a href="https://www.facebook.com" style="text-decoration: none;">Facebook</a> <br>
+                    <a href="https://www.twitter.com" style="text-decoration: none;">Twitter</a> <br>
+                    <a href="https://www.instagram.com" style="text-decoration: none;">Instagram</a> <br>
+                    <a href="https://www.linkdin.com" style="text-decoration: none;">LinkdIn</a>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </footer>
+  
+
+</body>
+</html>

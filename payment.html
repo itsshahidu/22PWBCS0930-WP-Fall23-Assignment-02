@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TheDigitalLibrary|Shahid Ullah</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+          background-color: rgb(118, 200, 227);
+      }
+
+      .container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #ffffff;
+          border-radius: 10px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      }
+
+
+      /* Table Styles */
+      .table {
+          margin-top: 20px;
+          border-collapse: collapse;
+          width: 100%;
+      }
+
+      .table th,
+      .table td {
+          padding: 10px;
+          text-align: left;
+          border-bottom: 1px solid #ccc;
+      }
+
+      .table th {
+          background-color: #f2f2f2; /
+      }
+
+
+      tfoot td {
+          text-align: right;
+      }
+
+      #total-amount {
+          font-weight: bold;
+          color: #333;
+      }
+
+      .btn-dark {
+          background-color: #0080ff;
+          color: #fff;
+          border: 2px solid rgb(0, 0, 0);
+          border-radius: 20px;
+          transition: background-color 0.2s;
+      }
+
+      .btn-dark:hover {
+          background-color: #ffffff;
+          border:3px solid rgb(0, 0, 0);
+          color: rgb(0, 0, 0);
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2>Payment Receipt</h2>
+
+      <table class="table mt-4">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+          </tr>
+        </thead>
+        <tbody id="receipt-items">
+          <!-- Receipt items  added here dynamically -->
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2"><strong>Total:</strong></td>
+            <td id="total-amount">$0.00</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <p class="mt-4">
+        <a href="#" id="downloadReceipt" class="btn btn-dark"
+          >Download Receipt</a
+        >
+        <a href="index.html" class="btn btn-dark">Return to Home</a>
+      </p>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+     <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+    
+      function getCartData() {
+        const cartData = localStorage.getItem("cart");
+        return cartData ? JSON.parse(cartData) : [];
+      }
+
+      // Function to generate the payment receipt
+      function generateReceipt() {
+        const receiptContainer = document.getElementById("receipt-items");
+        const totalAmountElement = document.getElementById("total-amount");
+        let totalAmount = 0;
+
+        const cartItems = getCartData();
+
+      
+        receiptContainer.innerHTML = "";
+
+        cartItems.forEach((item) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+                    <td>${item.id}</td>
+                    <td>${item.title}</td>
+                    <td>$${item.price.toFixed(2)}</td>
+                    <td>${item.quantity}</td>
+                `;
+          receiptContainer.appendChild(row);
+
+          totalAmount += item.price * item.quantity;
+        });
+
+        totalAmountElement.textContent = `$${totalAmount.toFixed(2)}`;
+      }
+
+      generateReceipt();
+
+      function downloadReceipt() {
+        const cartItems = getCartData();
+        const receiptText = generateReceiptText(cartItems);
+
+        const blob = new Blob([receiptText], { type: "text/plain" });
+        const url = window.URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "payment_receipt.txt";
+        document.body.appendChild(a);
+        a.click();
+
+        window.URL.revokeObjectURL(url);
+      }
+
+      function generateReceiptText(cartItems) {
+        let receiptText = "Payment Receipt\n\n";
+
+        cartItems.forEach((item, index) => {
+          receiptText += `Item ${index + 1}:\n`;
+          receiptText += `ID: ${item.id}\n`;
+          receiptText += `Title: ${item.title}\n`;
+          receiptText += `Price: $${item.price.toFixed(2)}\n`;
+          receiptText += `Quantity: ${item.quantity}\n\n`;
+        });
+
+        const totalAmount = cartItems.reduce(
+          (total, item) => total + item.price * item.quantity,
+          0
+        );
+        receiptText += `Total Amount: $${totalAmount.toFixed(2)}`;
+
+        return receiptText;
+      }
+
+      document
+        .getElementById("downloadReceipt")
+        .addEventListener("click", function () {
+          const cartItems = getCartData();
+          if (cartItems.length > 0) {
+            downloadReceipt();
+          } else {
+            alert(
+              "Your cart is empty. Add items to the cart before downloading the receipt."
+            );
+          }
+        });
+    </script>
+  </body>
+</html>
